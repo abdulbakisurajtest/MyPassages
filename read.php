@@ -22,12 +22,11 @@ else
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Comprehension Passages</title>
+	<title>My Passages</title>
 </head>
 <body>
-	<h1 id="top">Comprehensions From The Past</h1>
 	<p><a href="index.php">Home</a> / <a href="#"><?php echo htmlentities($blog['blog_title']);?></a></p>
-	<h2><?php echo htmlentities($blog['blog_title']); ?></h2>
+	<h1><?php echo htmlentities($blog['blog_title']); ?></h1>
 	<p><?php echo ($blog['blog_content']); ?></p>
 	<p><a href="#top">Back to top</a></p>
 </body>

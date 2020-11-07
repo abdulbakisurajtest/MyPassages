@@ -149,7 +149,7 @@ function removeBlog($id)
 function displayBlogHeader()
 {
 	include('pdo.php');
-	$sql = "SELECT * FROM blog";
+	$sql = "SELECT * FROM blog ORDER BY date_posted DESC";
 	$stmt1 = $pdo->query($sql);
 	$stmt2 = $pdo->query($sql);
 	$exists = $stmt1->fetch(PDO::FETCH_ASSOC);
