@@ -1,0 +1,29 @@
+DROP DATABASE IF EXISTS passages;
+
+CREATE DATABASE passages DEFAULT CHARACTER SET=utf8;
+GRANT ALL ON passages.* TO 'passages' @'localhost' IDENTIFIED BY 'passages';
+GRANT ALL ON passages.* TO 'passages' @'127.0.0.1' IDENTIFIED BY 'passages';
+
+USE passages;
+
+DROP TABLE IF EXISTS blog;
+CREATE TABLE blog(
+	blog_id INTEGER NOT NULL AUTO_INCREMENT,
+	blog_title VARCHAR(128),
+	blog_content TEXT,
+	date_posted INTEGER,
+	date_edited INTEGER,
+	PRIMARY KEY(blog_id),
+	INDEX (blog_title)
+	)ENGINE=INNODB DEFAULT CHARACTER SET=utf8;
+
+DROP TABLE IF EXISTS comment;
+CREATE TABLE comment(
+	comment_id INTEGER NOT NULL AUTO_INCREMENT,
+	comment_name VARCHAR(128),
+	date_posted INTEGER,
+	blog_id INTEGER,
+	PRIMARY KEY(comment_id),
+	FOREIGN KEY CONSTRAINTS (blog_id) REFERENCES blog(blog_id) ON DELETE CASCADE ON UPDATE CASCADE
+	)ENGINE=INNODB DEFAULT CHARACTER SET=utf8;
+
