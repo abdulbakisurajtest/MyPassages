@@ -1,9 +1,9 @@
 <?php
 require_once('function.php');
 
-if(isset($_POST['read']) || $_POST['id'])
+if(isset($_GET['id']))
 {
-	$blog = fetchBlog($_POST['id']);
+	$blog = fetchBlog($_GET['id']);
 	if(!is_array($blog))
 	{
 		header('Location: index.php');

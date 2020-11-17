@@ -162,11 +162,7 @@ function displayBlogHeader()
 			echo '<p>Written on: '.date('j/m/Y - g:ia',$row['date_posted']).'</p>';
 			echo '<p>Last edited: '.date('j/m/Y - g:ia',$row['date_edited']).'</p>';
 			echo '
-					<form method="post" action="read.php">
-						<input type="hidden" name="id" value="'.$row['blog_id'].'" />
-						<input type="submit" name="read" value="Read" />
-					</form>
-				';
+				<a href="read.php?id='.$row['blog_id'].'">Read</a>';
 			echo '</li>';
 		}
 	}
