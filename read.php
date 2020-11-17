@@ -25,7 +25,7 @@ else
 	<title>My Passages</title>
 </head>
 <body>
-	<p><a href="index.php">Home</a> / <a href="#"><?php echo htmlentities($blog['blog_title']);?></a></p>
+	<p><a href="index.php">Home</a> / <?php echo htmlentities($blog['blog_title']);?></p>
 	<h1><?php echo htmlentities($blog['blog_title']); ?></h1>
 	<p><?php echo ($blog['blog_content']); ?></p>
 	<p><a href="#top">Back to top</a></p>
